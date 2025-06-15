@@ -1,0 +1,2 @@
+# Pousada
+Template para pousada
