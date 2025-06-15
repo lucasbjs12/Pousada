@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Campo Fazenda das Pelotas - Experiência Autêntica no Interior</title>
+    <meta name="description" content="Viva uma experiência única na nossa pousada rural. Natureza, tranquilidade, passeios a cavalo, trilhas e a verdadeira hospitalidade do campo. Reserve já!">
+    <meta name="keywords" content="pousada rural, fazenda, turismo rural, hospedagem no campo, passeios, natureza, cavalgada, trilhas">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5530;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #27ae60;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #27ae60;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%2387ceeb" width="1200" height="800"/><path fill="%23228b22" d="M0 600 Q300 550 600 600 T1200 600 V800 H0 Z"/><circle fill="%23ffd700" cx="1000" cy="150" r="80"/><rect fill="%238b4513" x="100" y="500" width="80" height="100"/><polygon fill="%23654321" points="100,500 140,450 180,500"/><rect fill="%23ffffff" x="120" y="520" width="15" height="20"/><rect fill="%23ffffff" x="145" y="520" width="15" height="20"/><rect fill="%234169e1" x="130" y="540" width="20" height="10"/></svg>') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.6);
+        }
+
+        /* Highlights Section */
+        .highlights {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5530;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #27ae60;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #27ae60;
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.5rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 250px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text h3 {
+            color: #2c5530;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Activities Section */
+        .activities {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .activity-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .activity-image {
+            height: 200px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+
+        .activity-content {
+            padding: 1.5rem;
+        }
+
+        .activity-content h3 {
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 2rem;
+            background: #2c5530;
+            color: white;
+        }
+
+        .reviews .section-title {
+            color: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c5530;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #27ae60;
+        }
+
+        .whatsapp-button {
+            background: #25d366;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .whatsapp-button:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item h4 {
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #2ecc71;
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.8);
+            }
+            100% {
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid,
+            .activities-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add some visual interest */
+        .decorative-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#home" class="logo">🏡 Fazenda da Amandinha</a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#about">Nossa História</a></li>
+                <li><a href="#activities">Atividades</a></li>
+                <li><a href="#reviews">Avaliações</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Venha Viver a Experiência Rural</h1>
+            <p>Descubra a tranquilidade do campo, a hospitalidade genuína e a conexão com a natureza em nossa fazenda centenária.</p>
+            <a href="#contact" class="cta-button">Reserve Sua Estadia</a>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+        <div class="container">
+            <h2 class="section-title">Por que Escolher Nossa Pousada?</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌿</div>
+                    <h3>Natureza Preservada</h3>
+                    <p>Mais de 200 hectares de mata atlântica preservada, trilhas ecológicas e paisagens deslumbrantes.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🐎</div>
+                    <h3>Experiências Autênticas</h3>
+                    <p>Cavalgadas, ordenha, alimentação dos animais e vivência real da vida no campo.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🏠</div>
+                    <h3>Acomodações Confortáveis</h3>
+                    <p>Chalés rústicos com todo conforto, vista para as montanhas e decoração típica da fazenda.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🍳</div>
+                    <h3>Gastronomia Caseira</h3>
+                    <p>Café da manhã colonial, almoços com produtos da fazenda e receitas tradicionais da família.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeria de Momentos</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h3>Nascer do Sol na Fazenda</h3>
+                        <p>Desperte com a mais bela vista das montanhas</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h3>Trilhas Ecológicas</h3>
+                        <p>Explore mais de 10km de trilhas na mata</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h3>Cavalgadas</h3>
+                        <p>Passeios a cavalo pelos campos verdejantes</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h3>Vida Rural</h3>
+                        <p>Participe da ordenha e cuidado dos animais</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h3>Fogueira à Noite</h3>
+                        <p>Noites mágicas ao redor da fogueira</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h3>Chalés Aconchegantes</h3>
+                        <p>Conforto e rusticidade em perfeita harmonia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Nossa História</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Uma Tradição de Três Gerações</h3>
+                    <p>A Fazenda Vida no Campo foi fundada em 1952 pelo meu avô, José Silva, que chegou a estas terras com o sonho de criar uma propriedade que respeitasse a natureza e oferecesse o melhor da vida rural.</p>
+                    
+                    <p>Ao longo dos anos, a fazenda cresceu mantendo sempre os valores familiares de hospitalidade, autenticidade e amor pela terra. Em 2010, decidimos compartilhar essa experiência única transformando parte da propriedade em uma pousada rural.</p>
+                    
+                    <p>Hoje, recebemos visitantes do mundo todo que buscam paz, contato com a natureza e a experiência genuína da vida no campo. Cada hóspede é tratado como família, e cada momento aqui é uma oportunidade de reconexão com o essencial.</p>
+                    
+                    <p><strong>Venha fazer parte da nossa história!</strong></p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <h2 class="section-title">Atividades e Passeios</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image"></div>
+                    <div class="activity-content">
+                        <h3>🐎 Cavalgadas</h3>
+                        <p>Explore os campos e trilhas a cavalo com nossos guias experientes. Adequado para iniciantes e experientes.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image"></div>
+                    <div class="activity-content">
+                        <h3>🥾 Trilhas Ecológicas</h3>
+                        <p>Descubra cachoeiras escondidas, observe a fauna local e respire o ar puro da mata atlântica.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image"></div>
+                    <div class="activity-content">
+                        <h3>🐄 Ordenha e Cuidado dos Animais</h3>
+                        <p>Participe da rotina da fazenda, aprenda a ordenhar e alimente nossos animais carinhosos.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image"></div>
+                    <div class="activity-content">
+                        <h3>🎣 Pesca Esportiva</h3>
+                        <p>Relaxe pescando em nosso açude cristalino, cercado por paisagens deslumbrantes.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image"></div>
+                    <div class="activity-content">
+                        <h3>🔥 Noites de Fogueira</h3>
+                        <p>Reúna-se ao redor da fogueira para histórias, violão e um delicioso quentão.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image"></div>
+                    <div class="activity-content">
+                        <h3>🌅 Observação de Aves</h3>
+                        <p>Desperte cedo e observe mais de 50 espécies de aves em seu habitat natural.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">O que Nossos Hóspedes Dizem</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Uma experiência única! A hospitalidade da família é excepcional e a conexão com a natureza é inexplicável. Voltaremos com certeza!"</p>
+                    <p class="reviewer">- Maria Santos, São Paulo</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Lugar mágico para desconectar da cidade e reconectar com o essencial. As crianças adoraram os animais e as trilhas são deslumbrantes."</p>
+                    <p class="reviewer">- Carlos e Ana, Rio de Janeiro</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Café da manhã colonial maravilhoso, chalé super confortável e vista espetacular. Recomendo para quem busca paz e tranquilidade."</p>
+                    <p class="reviewer">- Roberto Silva, Belo Horizonte</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"A cavalgada foi inesquecível! Guias super atenciosos e cavalos dóceis. Experiência autêntica da vida no campo."</p>
+                    <p class="reviewer">- Juliana Costa, Brasília</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Três dias de pura tranquilidade. Amamos a fogueira à noite e a experiência de ordenhar as vacas. Lugar especial!"</p>
+                    <p class="reviewer">- Família Oliveira, Curitiba</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Superou todas as expectativas! Lugar limpo, organizado e a família é muito acolhedora. Natureza exuberante!"</p>
+                    <p class="reviewer">- Pedro Martins, Salvador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Conte-nos sobre sua viagem ideal..."></textarea>
+                        </div>
+                        <button type="button" class="whatsapp-button" onclick="sendWhatsApp()">
+                            📱 Fale Conosco pelo WhatsApp
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📍 Localização</h4>
+                        <p>Estrada Rural do Campo, Km 15<br>
+                        Zona Rural - Cidade Verde, MG<br>
+                        CEP: 12345-678</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📞 Contato</h4>
+                        <p>WhatsApp: (35) 99999-9999<br>
+                        E-mail: contato@fazendavidanocampo.com.br</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>🕐 Funcionamento</h4>
+                        <p>Check-in: 14h às 18h<br>
+                        Check-out: até 12h<br>
+                        Atendimento: 7h às 22h</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>🗺️ Como Chegar</h4>
+                        <p>Saindo de Belo Horizonte: 2h30min<br>
+                        Saindo de São Paulo: 4h<br>
+                        Saindo do Rio: 5h</p>
+                        <button class="whatsapp-button" onclick="openMaps()" style="margin-top: 1rem;">
+                            📍 Ver no Google Maps
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fazenda Vida no Campo</h3>
+                    <p>Proporcionando experiências autênticas da vida rural há mais de 10 anos. Venha descobrir a tranquilidade e hospitalidade do campo!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <p><a href="#about" style="color: white; text-decoration: none;">Nossa História</a></p>
+                    <p><a href="#activities" style="color: white; text-decoration: none;">Atividades</a></p>
+                    <p><a href="#gallery" style="color: white; text-decoration: none;">Galeria</a></p>
+                    <p><a href="#contact" style="color: white; text-decoration: none;">Contato</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Avalie Nossa Pousada</h3>
+                    <p>Sua opinião é muito importante!</p>
+                    <button class="whatsapp-button" onclick="openGoogleReview()" style="margin-top: 1rem; font-size: 0.9rem;">
+                        ⭐ Avaliar no Google
+                    </button>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" onclick="openInstagram()">📷</a>
+                <a href="#" onclick="openFacebook()">📘</a>
+                <a href="#" onclick="sendWhatsApp()">📱</a>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem;">
+                <p>&copy; 2025 Fazenda Vida no Campo. Todos os direitos reservados.</p>
+                <p style="font-size: 0.9rem; color: #bdc3c7;">Desenvolvido com ❤️ para proporcionar as melhores experiências rurais</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="whatsapp-float" onclick="sendWhatsApp()" title="Fale conosco pelo WhatsApp">
+        📱
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.backdropFilter = 'blur(15px)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // WhatsApp integration
+        function sendWhatsApp() {
+            const name = document.getElementById('name')?.value || '';
+            const email = document.getElementById('email')?.value || '';
+            const message = document.getElementById('message')?.value || '';
+            
+            let whatsappMessage = 'Olá! Gostaria de conhecer mais sobre a Pousada Rural Fazenda Vida no Campo. ';
+            
+            if (name) {
+                whatsappMessage += `Meu nome é ${name}. `;
+            }
+            
+            if (message) {
+                whatsappMessage += `${message}`;
+            } else {
+                whatsappMessage += 'Gostaria de informações sobre hospedagem, atividades e valores.';
+            }
+            
+            const phoneNumber = '5535999999999'; // Substitua pelo número real
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Google Maps integration
+        function openMaps() {
+            const mapsUrl = 'https://maps.google.com/maps?q=Fazenda+Vida+no+Campo+Zona+Rural'; // Substitua pelas coordenadas reais
+            window.open(mapsUrl, '_blank');
+        }
+
+        // Social media functions
+        function openInstagram() {
+            window.open('https://instagram.com/fazendavidanocampo', '_blank'); // Substitua pelo Instagram real
+        }
+
+        function openFacebook() {
+            window.open('https://facebook.com/fazendavidanocampo', '_blank'); // Substitua pelo Facebook real
+        }
+
+        function openGoogleReview() {
+            window.open('https://g.page/fazendavidanocampo/review', '_blank'); // Substitua pelo link real do Google
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.highlight-card, .activity-card, .review-card, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Gallery lightbox effect (simplified)
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const overlay = this.querySelector('.gallery-overlay');
+                if (overlay) {
+                    alert(overlay.querySelector('h3').textContent + '\n' + overlay.querySelector('p').textContent);
+                }
+            });
+        });
+
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            sendWhatsApp();
+        });
+
+        // Preload critical resources
+        const preloadImages = [
+            'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%2387ceeb" width="1200" height="800"/><path fill="%23228b22" d="M0 600 Q300 550 600 600 T1200 600 V800 H0 Z"/><circle fill="%23ffd700" cx="1000" cy="150" r="80"/><rect fill="%238b4513" x="100" y="500" width="80" height="100"/><polygon fill="%23654321" points="100,500 140,450 180,500"/><rect fill="%23ffffff" x="120" y="520" width="15" height="20"/><rect fill="%23ffffff" x="145" y="520" width="15" height="20"/><rect fill="%234169e1" x="130" y="540" width="20" height="10"/></svg>'
+        ];
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Mobile menu toggle (simplified)
+        if (window.innerWidth <= 768) {
+            const nav = document.querySelector('.nav');
+            nav.addEventListener('click', function(e) {
+                if (e.target.classList.contains('logo')) {
+                    const navLinks = document.querySelector('.nav-links');
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                }
+            });
+        }
+
+        // Scroll to top functionality
+        let scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '↑';
+        scrollToTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #2c5530;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        `;
+        
+        document.body.appendChild(scrollToTopBtn);
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+            }
+        });
+
+        // Performance optimization
+        const lazyImages = document.querySelectorAll('.gallery-item, .activity-image, .about-image');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.backgroundImage = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+                    imageObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    </script>
+</body>
+                    
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Conte-nos sobre sua viagem ideal..."></textarea>
+                        </div>
+                        <button type="button" class="whatsapp-button" onclick="sendWhatsApp()">
+                            📱 Fale Conosco pelo WhatsApp
+                        </button>
+                    </form>
+                </div>
